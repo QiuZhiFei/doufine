@@ -4,9 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [dev-packages]
+yapf = "*"
 
 [packages]
 flask = "*"
+flask-mako = "*"
 
 [requires]
 python_version = "2.7"
