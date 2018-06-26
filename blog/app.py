@@ -25,7 +25,10 @@ def create_app():
     flask_mako.MakoTemplates(app)
 
     app.debug = True
-    app.run()
+    app.run(
+         host = "0.0.0.0",
+         port = 5000,
+    )
 
     return app
 
