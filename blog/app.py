@@ -21,6 +21,8 @@ def create_app():
     app.add_url_rule("/", view_func=_v.index)
     app.add_url_rule("/user", view_func=_v.show_user_profile)
 
+    # app.static_folder = "./static/"
+    app.static_url_path = "./static/"
     app.template_folder = "./templates/"
     flask_mako.MakoTemplates(app)
 

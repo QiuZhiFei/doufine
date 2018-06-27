@@ -12,7 +12,9 @@
 </head>
 
 <body>
-    ${self.content()} ${self.footer()}
+    <div class="root">
+        ${self.content()} ${self.footer()}
+    </div>
 </body>
 
 </html>
@@ -21,7 +23,7 @@
 </%def>
     
 <%def name="title()">
-dou fine
+    dou fine
 </%def>
 
 <%def name="more_header()">
@@ -37,7 +39,13 @@ dou fine
 </%def>
 
 <%def name="doc_head()">
+    ## <link href="${static('blog/static/css/base.css')}" rel="stylesheet">
+    ## <link href="${static('css/base.css')}" rel="stylesheet">
+    <link type="text/css" href="${url_for('static', filename='css/base.css')}" rel="stylesheet">
 </%def>
 
 <%def name="footer()">
+    <div class="footer">
+        footer 1
+    </div>
 </%def>
