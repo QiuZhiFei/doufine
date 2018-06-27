@@ -2,24 +2,24 @@
 
 %>
 
-<!DOCTYPE html>
-<html lang="zh-CN">
+    <!DOCTYPE html>
+    <html lang="zh-CN">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> ${self.meta()}
-    <title>${self.title()}</title>
-    ${self.doc_head()}
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> ${self.meta()}
+        <title>${self.title()}</title>
+        ${self.doc_head()}
+    </head>
 
-<body>
-    <div class="root">
-        ${self.content()} ${self.footer()}
-    </div>
-</body>
+    <body>
+        <div class="root">
+            ${self.content()} ${self.footer()}
+        </div>
+    </body>
 
-</html>
+    </html>
 
-<%def name="meta()">
+    <%def name="meta()">
 </%def>
     
 <%def name="title()">
@@ -46,6 +46,10 @@
 
 <%def name="footer()">
     <div class="footer">
-        footer 1
+        <div class="footer-content">
+            <div class="left">
+                    <p> 北京读书群 </p>
+            <div>
+        </div>
     </div>
 </%def>
