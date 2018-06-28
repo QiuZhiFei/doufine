@@ -1,0 +1,13 @@
+.root {
+    width: 1000px;
+    height: 1000px;
+    background: yellow;
+}
+
+@media (min-width: 500px) {
+    .root {
+        width: 500px;
+        height: 500px;
+        background: red;
+    }
+}
