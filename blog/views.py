@@ -16,3 +16,6 @@ def show_user_profile():
     id = args.get('id', '')
     print(id)
     return 'user %s' % id
+
+def page_404():
+    return render_template("404.html")

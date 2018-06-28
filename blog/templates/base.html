@@ -42,6 +42,8 @@
     ## <link href="${static('blog/static/css/base.css')}" rel="stylesheet">
     ## <link href="${static('css/base.css')}" rel="stylesheet">
     <link type="text/css" href="${url_for('static', filename='css/base.css')}" rel="stylesheet">
+
+    ${self.more_header()}
 </%def>
 
 <%def name="footer()">
