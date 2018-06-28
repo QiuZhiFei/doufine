@@ -20,7 +20,9 @@ def create_app():
 
     app.add_url_rule("/", view_func=_v.index)
     app.add_url_rule("/user", view_func=_v.show_user_profile)
+    app.add_url_rule("/chart", view_func=_v.chart)
     app.add_url_rule("/404", view_func=_v.page_404)
+    app.add_url_rule("/chart_upload", view_func=_v.chart_upload)
 
     # app.static_folder = "./static/"
     app.static_url_path = "./static/"

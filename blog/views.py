@@ -17,5 +17,12 @@ def show_user_profile():
     print(id)
     return 'user %s' % id
 
+def chart():
+    return render_template("chart.html")
+
+def chart_upload():
+    # print("options", options)
+    return "123"
+
 def page_404():
     return render_template("404.html")
