@@ -1,13 +1,31 @@
 .root {
     width: 1000px;
     height: 1000px;
-    background: yellow;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (min-width: 500px) {
+.content1 {
+    background: yellow;
+    width: 100px;
+    height: 100px;
+}
+
+.content2 {
+    background: red;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+}
+
+
+/* @media (min-width: 500px) {
     .root {
         width: 500px;
         height: 500px;
         background: red;
     }
-}
+} */
