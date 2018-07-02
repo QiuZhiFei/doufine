@@ -1,11 +1,14 @@
+/* $item_width: 100px;
+$black: #2A363B */
+
 .root {
     width: 1000px;
     height: 1000px;
     background: gray;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 .content1 {
@@ -14,11 +17,25 @@
     height: 100px;
 }
 
+.content1:hover {
+    background: blue;
+}
+
 .content2 {
     background: red;
+    opacity: 0.3;
     width: 100px;
     height: 100px;
-    position: fixed;
+    /* margin-top: -50px; */
+    /* position: fixed; */
+}
+
+.content3 {
+    background: blue;
+    width: 100px;
+    height: 100px;
+    /* margin-top: -100px; */
+    /* position: fixed; */
 }
 
 
