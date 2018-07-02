@@ -21,6 +21,24 @@ $black: #2A363B */
     background: blue;
 }
 
+.content1:hover .sub-item {
+    display: block;
+}
+
+.sub-item {
+    /* background: black;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    display: none;
+    height: 40px;
+    z-index: 1; */
+    margin-top: 100%;
+    display: none;
+    background: white;
+}
+
 .content2 {
     background: red;
     opacity: 0.3;
