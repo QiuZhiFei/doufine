@@ -1,4 +1,8 @@
 /* $item_width: 100px;
 $black: #2A363B */
 
-.root {}
+.content {
+    width: 100%;
+    height: 300px;
+    background: gray;
+}

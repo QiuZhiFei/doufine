@@ -11,6 +11,18 @@
 <body>
     <div id="app">
         {{ message }}
+        <div id="header" class="header">
+        </div>
+        <div id="content" class="content">
+            <!-- <div v-for="item in items">
+                {{ item.title }}
+            </div> -->
+            <div v-for="item in todos">
+                {{ item }}
+            </div>
+        </div>
+        <div id="footer" class="footer">
+        </div>
     </div>
 
     <script src="src/app.js"></script>
