@@ -19,9 +19,31 @@ $black: #2A363B */
     flex-wrap: wrap;
 }
 
-.content-item {
+.content-container .item {
     width: 290px;
     height: 390px;
     margin: 12px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-container .item .des-container {
+    width: 100%;
+    height: 96px;
+}
+
+.content-container .item .des-container {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    height: 96px;
+}
+
+.content-container .item .logo-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: #f857a6;
+    box-shadow: 0 0 20px #f857a6;
 }
