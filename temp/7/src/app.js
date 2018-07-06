@@ -1,18 +1,16 @@
-const app = new Vue({
-    el: "#app",
-    data: {
-        message: "qiuzhifei",
-    }
-})
-
+// const app = new Vue({
+//     el: "#app",
+//     data: {
+//         todos: [
+//             { text: '1' },
+//             { text: '2' },
+//         ]
+//     }
+// })
 
 const content = new Vue({
     el: "#content",
     data: {
-        todos: [
-            { text: '1' },
-            { text: '2' },
-        ],
         items: [{
                 title: "title",
                 url: "https://source.unsplash.com/900x920"
