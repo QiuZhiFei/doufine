@@ -45,6 +45,8 @@ def show_user_moments():
         item['text'] = re.compile("(.*?)<br", re.S).findall(mblog.get('text', ''))[0]
         item['original_pic'] = mblog.get('original_pic', '')
         item['created_at'] = mblog.get('created_at', '')
+        item['scheme'] = card.get('scheme', '')
+        
         items.append(item)
 
     # return jsonify(items)
