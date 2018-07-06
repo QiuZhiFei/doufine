@@ -1,6 +1,7 @@
 from flask import Flask
 from flask.json import JSONEncoder
 import flask_mako
+from flask import make_response
 
 import views as _v
 
@@ -53,6 +54,17 @@ def create_app():
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
 #     return 'login'
+
+
+# @app.route('/user/moments')
+# def show_user_moments():
+#     return "123"
+    # response = make_response(jsonify(response=get_articles(ARTICLES_NAME)))
+    # response.headers['Access-Control-Allow-Origin'] = '*'
+    # response.headers['Access-Control-Allow-Methods'] = 'GET'
+    # response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type' 
+
+    # return _v.show_user_moments();
 
 
 if __name__ == '__main__':

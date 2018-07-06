@@ -3,6 +3,7 @@
 import flask
 from flask_mako import render_template
 from flask import jsonify
+from flask import make_response
 import re
 
 import sys
@@ -39,33 +40,22 @@ def show_user_moments():
     for card in cards:
         mblog = card.get('mblog', {})
 
-        text = mblog.get('text', '')
-
-
-
-        # r = re.compile("(.*?)<br", re.S)
-        # te = r.findall(text)[0]
-
-
-        r = re.compile("\#(.*?)\#", re.S)
-        te = r.findall(text)
-
-        # return te
-
-
-        
-
-        # 
-
         item = {}
         item['title'] = re.compile("(.*?)<br", re.S).findall(mblog.get('text', ''))[0]
         item['text'] = re.compile("\#(.*?)\#", re.S).findall(mblog.get('text', ''))[0]
         item['original_pic'] = mblog.get('original_pic', '')
         items.append(item)
 
-    # print("data == ", data);
-    # data = {"name": "zhifei"}
-    return jsonify(items)
+    # return jsonify(items)
+
+    result = {"items": items}
+
+    response = make_response(jsonify(result))
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET'
+    response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type' 
+
+    return response
 
 def page_404():
     return render_template("404.html")
