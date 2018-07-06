@@ -11,10 +11,7 @@ const content = new Vue({
                 return response.json();
             })
             .then(function(data) {
-                // this.$set('items', json.items);
                 const items = data.items;
-                console.log("data == ", data);
-                console.log("items == ", items);
                 Vue.set(content, 'items', items);
             });
     },
