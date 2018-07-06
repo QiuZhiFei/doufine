@@ -9,13 +9,14 @@
 </head>
 
 <body>
-    <div id="app">
-        {{ message }}
+    <div class="root">
         <div id="header" class="header">
         </div>
         <div id="content" class="content">
-            <div v-for="item in items">
-                {{ item.url }}
+            <div class="content-container">
+                <div v-for="item in items" class="content-item">
+                    <img v-bind:src="item.url">
+                </div>
             </div>
         </div>
         <div id="footer" class="footer">

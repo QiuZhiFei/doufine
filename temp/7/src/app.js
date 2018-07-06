@@ -1,13 +1,3 @@
-// const app = new Vue({
-//     el: "#app",
-//     data: {
-//         todos: [
-//             { text: '1' },
-//             { text: '2' },
-//         ]
-//     }
-// })
-
 const content = new Vue({
     el: "#content",
     data: {
