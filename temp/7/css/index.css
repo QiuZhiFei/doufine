@@ -56,6 +56,7 @@ $black: #2A363B */
     margin-top: 81px;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 .content-container .item .des-container div {
@@ -68,6 +69,12 @@ $black: #2A363B */
     width: 80px;
     height: 80px;
     border-radius: 40px;
+    /* width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 100px;
+    margin: 85px auto; */
+    /*  */
     background: #2b5876;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
@@ -83,4 +90,20 @@ $black: #2A363B */
     box-shadow: 0 0 20px #2b5876; */
     /* background: #f857a6; */
     /* box-shadow: 0 0 20px #f857a6; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.content-container .item .logo-container h4 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 100;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* top: 16px; */
 }
