@@ -16,10 +16,10 @@
             <div class="content-container">
                 <div v-for="item in items" class="item" :style="{backgroundImage:`url(${item.original_pic})`, color: `#fff`}">
                     <div class="dete-container">
-                        2018-5-5
+                        {{ item.created_at }}
                     </div>
                     <div class="des-container">
-
+                        {{ item.text }} {{ item.title }}
                     </div>
                     <div class="logo-container">
 
