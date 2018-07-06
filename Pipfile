@@ -9,6 +9,7 @@ yapf = "*"
 [packages]
 flask = "*"
 flask-mako = "*"
+requests = "*"
 
 [requires]
 python_version = "2.7"
