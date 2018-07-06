@@ -10,12 +10,17 @@ const content = new Vue({
             .then(function(response) {
                 return response.json();
             })
-            .then(function(myJson) {
-                console.log(myJson);
+            .then(function(data) {
+                // this.$set('items', json.items);
+                const items = data.items;
+                console.log("data == ", data);
+                console.log("items == ", items);
+                Vue.set(content, 'items', items);
             });
     },
     data: {
-        items: [{
+        items: [],
+        items1: [{
                 title: "title",
                 url: "https://source.unsplash.com/900x920"
             },
