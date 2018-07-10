@@ -32,8 +32,8 @@ const content = new Vue({
             // Vue.set(content, 'isLoading', true);
             this.isLoading = true;
 
-            // fetch('http://140.143.239.212:5000/user/moments')
-            const url = 'http://192.168.3.21:5000/user/moments?p=' + page;
+            const url = 'http://140.143.239.212:5000/user/moments?p=' + page;
+            // const url = 'http://192.168.3.21:5000/user/moments?p=' + page;
 
             fetch(url)
                 .then(function(response) {
