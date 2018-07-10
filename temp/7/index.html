@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-infinite-scroll@2.0.2/vue-infinite-scroll.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
@@ -13,7 +14,7 @@
         <div id="header" class="header">
         </div>
         <div id="content" class="content">
-            <div class="content-container">
+            <div class="content-container" v-infinite-scroll="loadMore">
                 <div class="item" v-for="item in items" :style="{backgroundImage:`url(${item.original_pic})`, color: `#fff`}">
                     <div class="dete-container">
                         {{ item.created_at }}

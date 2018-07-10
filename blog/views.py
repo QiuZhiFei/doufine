@@ -3,7 +3,7 @@
 import flask
 from flask_mako import render_template
 from flask import jsonify
-from flask import make_response
+from flask import make_response, request
 import re
 
 import sys
@@ -33,16 +33,25 @@ def chart_upload():
     return "123"
 
 def show_user_moments():
-    data = weibo.fetchZhifeiData(1).get("data", {})
+    page = request.args.get("p", "1")
+    data = weibo.fetchZhifeiData(int(page)).get("data", {})
     cards = data.get("cards", [])
+
+    # return jsonify(cards)
 
     items = []
     for card in cards:
         mblog = card.get('mblog', {})
+        titles = re.compile("\#(.*?)\#", re.S).findall(mblog.get('text', ''))
+        texts = re.compile("(.*?)<br", re.S).findall(mblog.get('text', ''))
+
+        if len(titles) == 0 or len(texts) == 0:
+            continue
 
         item = {}
-        item['title'] = re.compile("\#(.*?)\#", re.S).findall(mblog.get('text', ''))[0]
-        item['text'] = re.compile("(.*?)<br", re.S).findall(mblog.get('text', ''))[0]
+        item['title'] = titles[0]
+        item['text'] = texts[0]
+        
         item['original_pic'] = mblog.get('original_pic', '')
         item['created_at'] = mblog.get('created_at', '')
         item['scheme'] = card.get('scheme', '')
