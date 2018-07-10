@@ -34,6 +34,9 @@ $black: #2A363B */
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     text-decoration: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .content-container .item:hover {
@@ -57,6 +60,7 @@ $black: #2A363B */
     margin-top: 81px;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 

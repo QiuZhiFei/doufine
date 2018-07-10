@@ -14,7 +14,7 @@
         </div>
         <div id="content" class="content">
             <div class="content-container">
-                <div v-for="item in items" class="item" :style="{backgroundImage:`url(${item.original_pic})`, color: `#fff`}">
+                <div class="item" v-for="item in items" :style="{backgroundImage:`url(${item.original_pic})`, color: `#fff`}">
                     <div class="dete-container">
                         {{ item.created_at }}
                     </div>
