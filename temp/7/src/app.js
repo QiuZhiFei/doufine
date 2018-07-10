@@ -13,6 +13,10 @@ const content = new Vue({
         isLoading: false,
     },
     methods: {
+        handleItemClick: function(item) {
+            console.log("click", item);
+            window.open(item.scheme);
+        },
         loadMore: function() {
             console.log("load more");
             const page = this.page + 1;
