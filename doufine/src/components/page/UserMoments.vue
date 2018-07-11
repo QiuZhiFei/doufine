@@ -1,5 +1,6 @@
 <template>
     <div class="root">
+        <LoadMore />
         <div class="header">
         </div>
         <div id="content" class="content">
@@ -32,10 +33,15 @@ import Vue from "vue"
 import infiniteScroll from "vue-infinite-scroll"
 Vue.use(infiniteScroll)
 
+import pptt from "./../views/Temp.vue"
+import LoadMore from "./../views/LoadMore.vue"
+
 export default {
   name: "UserMoments",
-  component: {
-    infiniteScroll
+  components: {
+    infiniteScroll,
+    pptt,
+    LoadMore,
   },
   props: {
     items: {
