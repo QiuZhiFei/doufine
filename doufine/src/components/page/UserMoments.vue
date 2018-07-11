@@ -3,9 +3,8 @@
         <div class="header">
         </div>
         <div id="content" class="content">
-            <!-- <div class="content-container" v-infinite-scroll="loadMore"> -->
-            <div class="content-container">
-                <div class="item" v-for="item in items" v-on:click.stop="handleItemClick(item)" :style="{backgroundImage:`url(${item.original_pic})`, color: `#fff`}">
+            <div class="content-container" v-infinite-scroll="loadMore">
+                <div class="item" v-for="(item, index) in items" v-bind:key="index" v-on:click.stop="handleItemClick(item)" :style="{backgroundImage:`url(${item.original_pic})`, color: `#fff`}">
                     <div class="dete-container">
                         {{ item.created_at }}
                     </div>
@@ -29,7 +28,9 @@
 
 <script>
 import Vue from "vue"
+
 import infiniteScroll from "vue-infinite-scroll"
+Vue.use(infiniteScroll)
 
 export default {
   name: "UserMoments",
