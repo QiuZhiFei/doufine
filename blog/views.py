@@ -72,7 +72,7 @@ def show_user_moments():
 def page_404():
     return render_template("404.html")
 
-
 def handle_slack():
     print("request == ", request)
+    print("form == ", request.form)
     return "123"
