@@ -74,5 +74,5 @@ def page_404():
 
 def handle_slack():
     print("request == ", request)
-    print("form == ", request.form.get["payload", ""])
+    print("form == ", request.form.get("payload", ""))
     return "123"
