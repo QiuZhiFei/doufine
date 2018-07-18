@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-infinite-scroll@2.0.2/vue-infinite-scroll.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <div class="root">
+        <div id="header" class="header">
+        </div>
+        <div id="content" class="content">
+            <div class="content-container" v-infinite-scroll="loadMore">
+                <div class="item" v-for="item in items" v-on:click.stop="handleItemClick(item)" :style="{backgroundImage:`url(${item.original_pic})`, color: `#fff`}">
+                    <div class="dete-container">
+                        {{ item.created_at }}
+                    </div>
+                    <div class="des-container">
+                        <div>
+                            {{ item.text }}
+                        </div>
+                    </div>
+                    <div class="logo-container">
+                        <!-- <h4> A </h4> -->
+                        <div>
+                            {{ item.title }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="footer">
+    </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+
+</html>
