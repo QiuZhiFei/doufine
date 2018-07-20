@@ -1,0 +1,3 @@
+User-agent:*
+Allow:/
+Sitemap: http://www.doufine.com/sitemap_index.xml
