@@ -1,8 +1,7 @@
 <template>
-    <div class="root">
+    <div class="load-more-root">
         <div class="grid-row">
             <div class="col">
-
                 <ul class="loading">
                     <li></li>
                     <li></li>
@@ -23,14 +22,17 @@ export default {
 
 
 <style>
-.root {
-    width: 1000px;
-    height: 1000px;
+.load-more-root {
+    width: 100%;
+    height: 100%;
+    /* height: 100px; */
+    /* width: 1000px; */
+    /* height: 1000px; */
     /* background: gray; */
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .loading {
@@ -38,8 +40,8 @@ export default {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    /* top: 50%; */
+    /* left: 50%; */
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 0;
@@ -107,12 +109,21 @@ export default {
     clear: both;
 }
 
+.grid-row {
+    width: 100%;
+    height: 100%;
+}
+
 .grid-row .col {
-    position: absolute;
-    top: 0;
+    /* position: absolute; */
+    /* top: 0;
     left: 0;
-    bottom: 0;
-    width: 50%;
+    bottom: 0; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid-row .col+.col {
@@ -128,8 +139,8 @@ export default {
         background: #2b8ccd;
     }
     50% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(0.60);
+        transform: scale(0.60);
         background: white;
     }
     100% {
@@ -146,8 +157,8 @@ export default {
         background: #2b8ccd;
     }
     50% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(0.60);
+        transform: scale(0.60);
         background: white;
     }
     100% {
@@ -164,8 +175,8 @@ export default {
         background: white;
     }
     50% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(0.60);
+        transform: scale(0.60);
         background: #2b8ccd;
     }
     100% {
@@ -182,8 +193,8 @@ export default {
         background: white;
     }
     50% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(0.60);
+        transform: scale(0.60);
         background: #2b8ccd;
     }
     100% {

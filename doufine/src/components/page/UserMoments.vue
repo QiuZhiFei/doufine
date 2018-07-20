@@ -1,6 +1,5 @@
 <template>
     <div class="root">
-        <LoadMore />
         <div class="header">
         </div>
         <div id="content" class="content">
@@ -15,13 +14,15 @@
                         </div>
                     </div>
                     <div class="logo-container">
-                        <!-- <h4> A </h4> -->
                         <div>
                             {{ item.title }}
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="load-more">
+            <LoadMore />
         </div>
     </div>
 </template>
@@ -33,14 +34,12 @@ import Vue from "vue"
 import infiniteScroll from "vue-infinite-scroll"
 Vue.use(infiniteScroll)
 
-import pptt from "./../views/Temp.vue"
 import LoadMore from "./../views/LoadMore.vue"
 
 export default {
   name: "UserMoments",
   components: {
     infiniteScroll,
-    pptt,
     LoadMore,
   },
   props: {
@@ -208,6 +207,11 @@ export default {
     align-items: center;
     justify-content: center;
     /* top: 16px; */
+}
+
+.load-more {
+    width: 100%;
+    height: 50px;
 }
 </style>
 
