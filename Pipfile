@@ -5,6 +5,7 @@ name = "pypi"
 
 [dev-packages]
 yapf = "*"
+pylint = "<2.0.0"
 
 [packages]
 flask = "*"
