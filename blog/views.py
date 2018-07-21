@@ -54,6 +54,7 @@ def show_user_moments():
         
         item['original_pic'] = mblog.get('original_pic', '')
         item['created_at'] = mblog.get('created_at', '')
+        item['id'] = mblog.get('id', '')
         item['scheme'] = card.get('scheme', '')
         
         items.append(item)

@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from flask import Flask
 from flask.json import JSONEncoder
 import flask_mako
