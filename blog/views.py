@@ -14,7 +14,10 @@ sys.path.append('weibo.py')
 import weibo
 
 def index():
-    _store.addWB("123")
+    # _store.addWB("123")
+    # items = _store.searchWB("123")
+    # return jsonify(items)
+
     return render_template("index.html")
 
 
@@ -57,12 +60,15 @@ def show_user_moments():
         
         item['original_pic'] = mblog.get('original_pic', '')
         item['created_at'] = mblog.get('created_at', '')
-        item['id'] = mblog.get('id', '')
+        item['item_id'] = mblog.get('id', '')
         item['scheme'] = card.get('scheme', '')
         
         items.append(item)
 
     # return jsonify(items)
+
+    # cache
+    _store.addWBItemsIfNeeded(items)
 
     result = {"items": items}
 
