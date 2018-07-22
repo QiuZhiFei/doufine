@@ -6,12 +6,15 @@ from flask import jsonify
 from flask import make_response, request
 import re
 
+import libs.store
+
 import sys
 sys.path.append('weibo.py')
 
 import weibo
 
 def index():
+    libs.store.store()
     return render_template("index.html")
 
 

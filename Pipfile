@@ -11,6 +11,7 @@ pylint = "<2.0.0"
 flask = "*"
 flask-mako = "*"
 requests = "*"
+mysql-python = "*"
 
 [requires]
 python_version = "2.7"
