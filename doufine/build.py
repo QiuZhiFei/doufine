@@ -6,7 +6,8 @@ import sys
 
 def build():
     os.system("yarn build")
-    os.system("mkdir /var/www/html")
+    os.system("rm -rf /var/www/html")
+    os.system("mkdir -p /var/www/html")
     os.system("mv dist/* /var/www/html")
     os.system("ln -sf nginx.conf /etc/nginx/conf.d/")
 
