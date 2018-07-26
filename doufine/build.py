@@ -5,19 +5,25 @@ import commands
 import sys
 
 def build():
-    # print "build"
+    os.system("yarn build")
+    os.system("mv dist/* /var/www/html && \
+    mv not_support.html /var/www/html")
+    os.system("ln -sf nginx.conf /etc/nginx/conf.d/")
+
+    # result, pwd = commands.getstatusoutput("lsof -i:1111")
+
     # pwd = os.system("pwd") + "/nginx.conf"
     # pwd = os.system("pwd").read()
 
-    result, pwd = commands.getstatusoutput("lsof -i:1111")
-    if pwd == "":
-        result, pwd = commands.getstatusoutput("pwd")
-        nginx_file_name = pwd + "/nginx.conf"
-        os.system("sudo nginx -c %s" % nginx_file_name)
-        # sys.exit("nginx %s" % nginx_file_name)
-        # sys.exit("nginx 80 没有开启")
+    # result, pwd = commands.getstatusoutput("lsof -i:1111")
+    # if pwd == "":
+    #     result, pwd = commands.getstatusoutput("pwd")
+    #     nginx_file_name = pwd + "/nginx.conf"
+    #     os.system("sudo nginx -c %s" % nginx_file_name)
+    #     # sys.exit("nginx %s" % nginx_file_name)
+    #     # sys.exit("nginx 80 没有开启")
 
-    os.system("yarn | yarn serve")
+    # os.system("yarn | yarn serve")
         
     # print result
     # print pwd, type(pwd), pwd == ""
