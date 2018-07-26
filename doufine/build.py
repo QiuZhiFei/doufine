@@ -6,8 +6,8 @@ import sys
 
 def build():
     os.system("yarn build")
-    os.system("mv dist/* /var/www/html && \
-    mv not_support.html /var/www/html")
+    os.system("mkdir /var/www/html")
+    os.system("mv dist/* /var/www/html")
     os.system("ln -sf nginx.conf /etc/nginx/conf.d/")
 
     # result, pwd = commands.getstatusoutput("lsof -i:1111")
