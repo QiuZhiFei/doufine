@@ -9,6 +9,8 @@ def build():
     os.system("rm -rf /var/www/html")
     os.system("mkdir -p /var/www/html")
     os.system("mv dist/* /var/www/html")
+    os.system("cp static/* /var/www/html")
+
     os.system("cp nginx.conf /etc/nginx/conf.d/")
     # os.system("ln -sf nginx.conf /etc/nginx/conf.d/")
 
