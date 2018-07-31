@@ -17,7 +17,7 @@ def addWBItemIfNeeded(item):
     items = searchWB(item_id)
 
     # print ("add items == %s %s" % (items, len(items)))
-    print ("add items == %s %s" % (item_id, len(items)))
+    # print ("add items == %s %s" % (item_id, len(items)))
 
     if len(items) == 0:
         print ("add item == " % item)
