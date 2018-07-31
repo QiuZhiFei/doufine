@@ -15,32 +15,60 @@ APP_CONFIG = {
     "MAKO_DEFAULT_FILTERS": ["decode.utf8"],
 }
 
+app = Flask(__name__)
+app.config.update(APP_CONFIG)
+app.json_decoder = JSONEncoder
 
-def create_app():
-    app = Flask(__name__)
-    app.config.update(APP_CONFIG)
-    app.json_decoder = JSONEncoder
+app.add_url_rule("/", view_func=_v.index)
+app.add_url_rule("/user", view_func=_v.show_user_profile)
+app.add_url_rule("/chart", view_func=_v.chart)
+app.add_url_rule("/404", view_func=_v.page_404)
+app.add_url_rule("/chart_upload", view_func=_v.chart_upload)
+app.add_url_rule("/user/moments", view_func=_v.show_user_moments)
+app.add_url_rule("/slack", view_func=_v.handle_slack, methods=['GET', 'POST'])
 
-    app.add_url_rule("/", view_func=_v.index)
-    app.add_url_rule("/user", view_func=_v.show_user_profile)
-    app.add_url_rule("/chart", view_func=_v.chart)
-    app.add_url_rule("/404", view_func=_v.page_404)
-    app.add_url_rule("/chart_upload", view_func=_v.chart_upload)
-    app.add_url_rule("/user/moments", view_func=_v.show_user_moments)
-    app.add_url_rule("/slack", view_func=_v.handle_slack, methods=['GET', 'POST'])
+# app.static_folder = "./static/"
+app.static_url_path = "./static/"
+app.template_folder = "./templates/"
+flask_mako.MakoTemplates(app)
 
-    # app.static_folder = "./static/"
-    app.static_url_path = "./static/"
-    app.template_folder = "./templates/"
-    flask_mako.MakoTemplates(app)
+app.debug = True
 
-    app.debug = True
+
+if __name__ == '__main__':
     app.run(
-         host = "0.0.0.0",
-         port = 5000,
+        host = "0.0.0.0",
+        port = 5000,
     )
 
-    return app
+
+
+
+# def create_app():
+#     app = Flask(__name__)
+#     app.config.update(APP_CONFIG)
+#     app.json_decoder = JSONEncoder
+
+#     app.add_url_rule("/", view_func=_v.index)
+#     app.add_url_rule("/user", view_func=_v.show_user_profile)
+#     app.add_url_rule("/chart", view_func=_v.chart)
+#     app.add_url_rule("/404", view_func=_v.page_404)
+#     app.add_url_rule("/chart_upload", view_func=_v.chart_upload)
+#     app.add_url_rule("/user/moments", view_func=_v.show_user_moments)
+#     app.add_url_rule("/slack", view_func=_v.handle_slack, methods=['GET', 'POST'])
+
+#     # app.static_folder = "./static/"
+#     app.static_url_path = "./static/"
+#     app.template_folder = "./templates/"
+#     flask_mako.MakoTemplates(app)
+
+#     app.debug = True
+#     app.run(
+#          host = "0.0.0.0",
+#          port = 5000,
+#     )
+
+#     return app
 
 
 
@@ -70,5 +98,5 @@ def create_app():
     # return _v.show_user_moments();
 
 
-if __name__ == '__main__':
-    create_app()
+# if __name__ == '__main__':
+#     create_app()
