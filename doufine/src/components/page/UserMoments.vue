@@ -48,38 +48,36 @@ export default {
       default: function() {
         return [];
       }
-    },
-    page: {
-      type: Number,
-      default: 1
-    },
-    isLoading: {
-      type: Boolean,
-      default: false
     }
   },
+  data: function() {
+    return {
+      page: 1,
+      isLoading: false
+    };
+  },
   mounted: function() {
-    console.log("mounted", this.page);
     this.fetchData(this.page);
   },
   methods: {
     handleItemClick: function(item) {
-      console.log("click", item);
       window.open(item.scheme);
     },
     loadMore: function() {
-      console.log("load more");
+      if (this.items.length === 0) {
+          return;
+      }
       const page = this.page + 1;
       this.fetchData(page);
     },
     fetchData: function(page) {
       if (this.isLoading) {
-        console.log("return");
         return;
       }
 
+      this.isLoading = true;
+
       const _this = this;
-      Vue.set(content, "isLoading", true);
 
       const url = "http://api.doufine.com/user/moments?p=" + page;
       //   const url = "http://140.143.239.212:5000/user/moments?p=" + page;
@@ -90,8 +88,8 @@ export default {
           return response.json();
         })
         .then(function(data) {
-          Vue.set(content, "isLoading", false);
-          Vue.set(content, "page", page);
+          _this.isLoading = false;
+          _this.page = page;
 
           const items = data.items;
           let result = _this.items || [];
