@@ -12,6 +12,8 @@ def build():
     os.system("cp static/* /var/www/html")
 
     os.system("cp nginx.conf /etc/nginx/conf.d/")
+
+    os.system("nginx -s reload")
     # os.system("ln -sf nginx.conf /etc/nginx/conf.d/")
 
     # result, pwd = commands.getstatusoutput("lsof -i:1111")
